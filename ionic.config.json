@@ -1,0 +1,7 @@
+{
+  "name": "ChargeAlarm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

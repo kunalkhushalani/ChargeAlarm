@@ -1,0 +1,64 @@
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Set Alarm
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="mt-5 pt-5">
+    <ion-row>
+      <ion-col size="5"
+        ><div class="text-right w-100">
+          <ion-fab-button
+            class="actionButton float-right"
+            color="primary"
+            (click)="increaseDecreaseLevel('minus')"
+            [attr.disabled]="batteryLevel < 1 ? 'disabled' : null"
+          >
+            <ion-icon name="remove"></ion-icon>
+          </ion-fab-button></div
+      ></ion-col>
+
+      <ion-col size="2"
+        ><div class="w-100">
+          <ion-input
+            placeholder="Level"
+            class="textField text-center border border-top-0 border-right-0 border-left-0 w-100"
+            type="number"
+            name="batteryLevelField"
+            [(ngModel)]="batteryLevel"
+          ></ion-input></div
+      ></ion-col>
+
+      <ion-col size="5"
+        ><div class="text-left w-100">
+          <ion-fab-button
+            class="actionButton"
+            color="primary"
+            (click)="increaseDecreaseLevel('add')"
+            [attr.disabled]="batteryLevel > 100 ? 'disabled' : null"
+          >
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button></div
+      ></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="w-100">
+    <ion-grid
+      ><ion-row
+        ><ion-col size="5"></ion-col
+        ><ion-col size="2"
+          ><ion-fab-button
+            *ngIf="buttonType === 'play' || buttonType === 'pause'"
+            (click)="togglePlayPause()"
+            color="primary"
+            [attr.disabled]="(batteryLevel < 1 || batteryLevel > 100) ? true: null"
+          >
+            <ion-icon [name]="buttonType"></ion-icon> </ion-fab-button></ion-col
+        ><ion-col size="5"></ion-col></ion-row
+    ></ion-grid>
+  </div>
+</ion-content>

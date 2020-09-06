@@ -1,0 +1,13 @@
+{
+  "appId": "com.chargealarm.kk",
+  "appName": "ChargeAlarm",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {},
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "res://public/assets/icon/Battery-full-icon"
+    }
+  }
+}
